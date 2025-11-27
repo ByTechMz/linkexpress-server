@@ -48,6 +48,8 @@ app.post("/enviar", async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log("Servidor LinkExpress rodando na porta 3000!");
+const port = process.env.PORT || 3000; // Render fornece a porta via variável de ambiente
+app.listen(port, () => {
+    console.log("Servidor LinkExpress rodando na porta " + port);
 });
+
