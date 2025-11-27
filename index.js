@@ -7,8 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 // Conectar no Firebase
+const serviceAccount = JSON.parse(process.env.KEY_FIREBASE_JSON);
+
 admin.initializeApp({
-    credential: admin.credential.cert(require("./serviceAccountKey.json"))
+  credential: admin.credential.cert(serviceAccount)
 });
 
 // Guardar tokens dos usuários
